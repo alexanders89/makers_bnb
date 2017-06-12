@@ -3,6 +3,8 @@ ENV['RACK_ENV'] = 'test'
 require 'sinatra'
 require './app/app'
 require 'capybara/rspec'
+require 'capybara'
+require './app/models/user'
 
 Capybara.app = MakersBnb
 
