@@ -4,11 +4,11 @@ require_relative 'datamapper_setup'
 class MakersBnb < Sinatra::Base
 
   get '/' do
-    'Hello World'
+    'Hello Makers BnB'
   end
 
   get '/spaces' do
-    "Bobs pad"
+    Space.all.to_json
   end
 
   run! if app_file == $0
