@@ -1,8 +1,12 @@
 ENV['RACK_ENV'] = 'test'
 
+
+require File.join(File.dirname(__FILE__), '..', 'app/app')
+require File.join(File.dirname(__FILE__), '..', 'app/models/space')
 require 'sinatra'
 require './app/app'
 require 'capybara/rspec'
+require 'capybara'
 
 Capybara.app = MakersBnb
 
