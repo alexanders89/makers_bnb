@@ -5,4 +5,10 @@ feature 'see a list of spaces on a homepage' do
     expect(page.status_code).to eq 200
     expect(page).to have_content "Bobs pad"
   end
+
+  scenario 'User adds a new space' do
+    visit 'spaces/new'
+    fill_in 'name', with: 'My new listing'
+    expect(page).to have_content 'My new listing'
+  end
 end

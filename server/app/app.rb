@@ -11,6 +11,10 @@ class MakersBnb < Sinatra::Base
     Space.all.to_json
   end
 
+  get 'spaces/new' do
+    
+  end
+
   run! if app_file == $0
 
 end
