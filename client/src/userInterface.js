@@ -4,13 +4,13 @@ $(document).ready(function() {
 
   $('#sign-up').on('click', function() {
     firstname = document.getElementById("firstName").value;
-    user.getFirstName(firstname);
+    user.editFirstName(firstname);
     username = document.getElementById("userName").value;
-    user.getUserName(username);
+    user.editUserName(username);
     email = document.getElementById("email").value;
-    user.getEmail(email);
+    user.editEmail(email);
     password = document.getElementById("password").value;
-    user.getPassword(password);
+    user.editPassword(password);
     storeNewUser();
   });
 
