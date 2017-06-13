@@ -1,9 +1,8 @@
 # responsable for routing API calls
-require 'sinatra/base'
 require_relative 'datamapper_setup'
-
 require 'json'
 require 'sinatra/cross_origin'
+require 'sinatra/base'
 
 class MakersBnb < Sinatra::Base
 
@@ -12,7 +11,12 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/' do
-    'Hello Makers BnB'
+    "Hello Makers BnB"
+  end
+
+  post '/users/new' do
+    User.create(firstName: params['first'], userName: params['username'], email: params['email'], password: params['password'] )
+    redirect '/spaces'
   end
 
   get '/spaces' do
