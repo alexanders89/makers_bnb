@@ -1,7 +1,14 @@
+# responsable for routing API calls
 require 'sinatra/base'
 require_relative 'datamapper_setup'
+require 'json'
+require 'sinatra/cross_origin'
 
 class MakersBnb < Sinatra::Base
+
+  before do
+    response.headers['Access-Control-Allow-Origin'] = '*'
+  end
 
   get '/' do
     'Hello Makers BnB'
@@ -11,10 +18,10 @@ class MakersBnb < Sinatra::Base
     Space.all.to_json
   end
 
-  get 'spaces/new' do
-    
+  post '/spaces/new' do
+    Space.create(name: params['name'])
+    redirect '/spaces'
   end
 
-  run! if app_file == $0
-
+  run! if app_file == $PROGRAM_NAME
 end
