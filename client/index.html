@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="src/jquery.js"></script>
+    <script src="src/jQueryInterface.js"></script>
+    <script src="src/User.js"></script>
     <title>MakersBNB</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <h1>Sign up here!</h1>
+    <label> Name: </label>
+    <input id="firstName" type="text" name="firstName" placeholder="firstName">
+    <br>
+    <label> User-Name: </label>
+    <input id="userName" type="text" name="User-Name" placeholder="User-Name">
+    <br>
+    <label> Email: </label>
+    <input id="email" type="email" name="email" placeholder="email">
+    <br>
+    <label> Password: </label>
+    <input id="password" type="password" name="password" placeholder="password">
+    <br>
+    <input type="button" value="Sign up" onclick="msg()">
+
+    <script>
+      function msg() {
+        alert("Thanks for signing up!")
+      };
+    </script>
   </body>
 </html>
