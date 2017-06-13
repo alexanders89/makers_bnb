@@ -1,6 +1,7 @@
 # responsable for routing API calls
 require 'sinatra/base'
 require_relative 'datamapper_setup'
+
 require 'json'
 require 'sinatra/cross_origin'
 
@@ -23,5 +24,5 @@ class MakersBnb < Sinatra::Base
     redirect '/spaces'
   end
 
-  run! if app_file == $PROGRAM_NAME
+run! if app_file == $0
 end
