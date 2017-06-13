@@ -1,5 +1,8 @@
-require 'sinatra/base'
+# responsable for routing API calls
 require_relative 'datamapper_setup'
+require 'json'
+require 'sinatra/cross_origin'
+require 'sinatra/base'
 
 class MakersBnb < Sinatra::Base
 
@@ -13,15 +16,17 @@ class MakersBnb < Sinatra::Base
 
   post '/users/new' do
     User.create(firstName: params['first'], userName: params['username'], email: params['email'], password: params['password'] )
-    redirect '/listings'
+    redirect '/spaces'
   end
 
-  get '/listings' do
-    'Thanks for signing up!'
-
+  get '/spaces' do
+    Space.all.to_json
   end
 
+  post '/spaces/new' do
+    Space.create(name: params['name'])
+    redirect '/spaces'
+  end
 
 run! if app_file == $0
-
 end
