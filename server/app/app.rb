@@ -5,17 +5,17 @@ require 'sinatra/cross_origin'
 require 'sinatra/base'
 
 class MakersBnb < Sinatra::Base
-
   before do
     response.headers['Access-Control-Allow-Origin'] = '*'
   end
 
   get '/' do
-    "Hello Makers BnB"
+    'Hello Makers BnB'
   end
 
   post '/users/new' do
-    User.create(firstName: params['first'], userName: params['username'], email: params['email'], password: params['password'] )
+    User.create(firstName: params['first'], userName: params['username'],
+                email: params['email'], password: params['password'])
     redirect '/spaces'
   end
 
@@ -29,5 +29,5 @@ class MakersBnb < Sinatra::Base
     redirect '/spaces'
   end
 
-run! if app_file == $0
+  run! if app_file == $0
 end
