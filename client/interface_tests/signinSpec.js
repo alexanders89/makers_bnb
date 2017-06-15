@@ -2,6 +2,7 @@ var signInTest = function () {
   var userName = $('#userName');
   var password = $('#password');
   var button = $('#sign-in');
+
   userName.val('Henry90');
   password.val('H3nry');
   button.click();
