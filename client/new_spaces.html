@@ -5,10 +5,13 @@
     <title>New Space | Makers BnB</title>
   </head>
   <body>
-      <h1 id="space-new">Space Name:</h1>
-        <input type="text" id="space-name" value="My new space">
+    <section>
+      <form id="space-new">
+        Space Name: <input type="text" id="space-name" placeholder="My new space">
       <br></br>
-      <textarea rows="4" cols="50" id="space-description">Add details about your space here.</textarea>
+      <textarea rows="4" cols="50" id="space-description" placeholder="Add details about your space here."></textarea>
+      <br></br>
+      Space Price: <input type="number" id="space-price" min="1">
       <br></br>
         <button type="submit" id="space-add">Add space</button>
       </form>
