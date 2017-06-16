@@ -3,7 +3,6 @@ function User (first, username, email, password) {
   this.userName = username;
   this.email = email;
   this.password = password;
-
 };
 
 User.prototype.getFirstName = function() {
