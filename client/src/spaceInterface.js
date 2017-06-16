@@ -3,7 +3,6 @@ $(document).ready(function() {
   var server = 'http://localhost:9292'
 
   getCurrentUser();
-  console.log('we are here');
 
   $('#space-add').on('click', function(){
     name = document.getElementById("space-name").value;
@@ -18,10 +17,7 @@ $(document).ready(function() {
   }
 
   function getCurrentUser() {
-    console.log('Here?');
     $.get(server + '/spaces', function(data) {
-      console.log(' or Here?');
-      console.log(data);
       var userData = JSON.parse(data);
       var currentUser = userData[0].firstName;
       $('#welcome').text('Hello ' + currentUser);

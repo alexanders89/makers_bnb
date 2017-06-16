@@ -10,8 +10,8 @@ var signUpTest = function () {
   email.val('Henry@henry.com');
   password.val('H3nry');
   button.click();
-  window.open('spaces.html')
-  return $( document, '#welcome').text() === "Hello Henry"
+
+  return  $('#welcome').text() === 'Hello Henry';
 }
 
 function runTests() {
