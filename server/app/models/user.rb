@@ -2,7 +2,6 @@ require 'bcrypt'
 require 'dm-validations'
 
 class User
-
   include DataMapper::Resource
 
   property :id, Serial
@@ -20,4 +19,5 @@ class User
     @password = password
     self.password_digest = BCrypt::Password::create(password)
   end
+
 end

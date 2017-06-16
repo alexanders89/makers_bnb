@@ -11,8 +11,6 @@ var signInTest = function () {
 
 }
 
-
 function runTests() {
   console.log(signInTest());
-  // signUpTest();
 }
