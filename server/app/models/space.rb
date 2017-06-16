@@ -5,5 +5,5 @@ class Space
   property :id, Serial
   property :name, String, :required => true
   property :description, Text
-  property :price, Float
+  property :price, Number
 end
