@@ -8,11 +8,13 @@ $(document).ready(function() {
     space.editName(name);
     description = document.getElementById("space-description").value;
     space.editDescription(description);
+    price = document.getElementById("space-price").value;
+    space.editPrice(price);
     storeNewSpace()
   });
 
   function storeNewSpace() {
-    $.post(server + '/spaces/new', {"name": space.name, "description": space.description});
+    $.post(server + '/spaces/new', {"name": space.name, "description": space.description, "price": space.price});
   }
 
 
@@ -20,7 +22,7 @@ $(document).ready(function() {
       $.get(server + '/spaces', function (data){
         var spaces = JSON.parse(data);
         for (i = 0; i < spaces.length; i++) {
-          $('ul').append('<li>'+ "NAME: " + spaces[i].name + ": " + "SPACE: " + spaces[i].description + '</li>');
+          $('ul').append('<li>'+ "NAME: " + spaces[i].name + "  " + "SPACE: " + spaces[i].description + "  PRICE: " + spaces[i].price + '</li>');
         }
       });
     }
