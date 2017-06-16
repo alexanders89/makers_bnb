@@ -3,10 +3,10 @@ $(document).ready(function() {
   var server = 'http://localhost:9292'
 
   $('#sign-up').on('click', function() {
-    firstname = document.getElementById("firstName").value;
-    user.editFirstName(firstname);
-    username = document.getElementById("userName").value;
-    user.editUserName(username);
+    firstName = document.getElementById("firstName").value;
+    user.editFirstName(firstName);
+    userName = document.getElementById("userName").value;
+    user.editUserName(userName);
     email = document.getElementById("email").value;
     user.editEmail(email);
     password = document.getElementById("password").value;
@@ -15,6 +15,6 @@ $(document).ready(function() {
   });
 
   function storeNewUser() {
-    $.post(server + '/users/new', {"first": user.firstName, "username": user.userName, "email": user.email, "password": user.password})
+    $.post(server + '/users/new', {"firstName": user.firstName, "userName": user.userName, "email": user.email, "password": user.password})
   };
 });
