@@ -2,19 +2,15 @@ require './app/models/user'
 
 describe User do
 
- let!(:user) do User.create(firstName: 'Harold',
-                userName: 'daddybear',
-                email: 'harold@thebear.com',
-                password: 'haroldisme')
+ let!(:user) do
   end
 
- it 'authenticates when given a valid username and password' do
-    authenticated_user = User.authenticate(user.userName, user.password)
-    expect(authenticated_user).to eq user
+ it 'allows a user to be created' do
+   User.create(firstName: 'Harold',
+               userName: 'daddybear',
+               email: 'harold@thebear.com',
+               password: 'haroldisme')
+   user = User.last(userName: 'daddybear')
+   expect(user.email).to eq('harold@thebear.com')
   end
-
- it 'does not authenticate when given an incorrect password' do
-    expect(User.authenticate(user.userName, 'wrong_stupid_password')).to be_nil
-  end
-
 end

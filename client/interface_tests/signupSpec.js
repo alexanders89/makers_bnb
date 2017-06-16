@@ -11,12 +11,9 @@ var signUpTest = function () {
   password.val('H3nry');
   button.click();
   window.open('spaces.html')
-  return $('#welcome').text() === "Hello Henry"
-
+  return $( document, '#welcome').text() === "Hello Henry"
 }
-
 
 function runTests() {
   console.log(signUpTest());
-  // signUpTest();
 }
