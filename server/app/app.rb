@@ -14,17 +14,20 @@ class MakersBnb < Sinatra::Base
     'Hello Makers BnB'
   end
 
+  get '/users' do
+    User.all.to_json
+  end
+
   post '/users/new' do
-    User.create(firstName: params['first'],
-                userName: params['username'],
+    User.create(firstName: params['firstName'],
+                userName: params['userName'],
                 email: params['email'],
                 password: params['password'])
-    redirect '/spaces'
+    redirect '/users'
   end
 
   get '/spaces' do
     Space.all.to_json
-    User.all.to_json
   end
 
   post '/spaces/new' do

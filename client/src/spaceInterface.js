@@ -6,9 +6,9 @@ $(document).ready(function() {
   getCurrentUser();
 
   $('#space-add').on('click', function(){
-    name = document.getElementById("space-name").value;
+    var name = document.getElementById("space-name").value;
     space.editName(name);
-    description = document.getElementById("space-description").value;
+    var description = document.getElementById("space-description").value;
     space.editDescription(description);
     storeNewSpace()
   });
@@ -19,6 +19,7 @@ $(document).ready(function() {
 
   function listSpaces() {
     $.get(server + '/spaces', function (data){
+      console.log(data);
       var spaces = JSON.parse(data);
       for (i = 0; i < spaces.length; i++) {
         $('ul').append('<li>'+ "NAME: " + spaces[i].name + ": " + "SPACE: " + spaces[i].description + '</li>');
@@ -27,7 +28,7 @@ $(document).ready(function() {
   }
 
   function getCurrentUser() {
-    $.get(server + '/spaces', function(data) {
+    $.get(server + '/users', function(data) {
       var userData = JSON.parse(data);
       var currentUser = userData[0].firstName;
       $('#welcome').text('Hello ' + currentUser);
