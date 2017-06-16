@@ -18,7 +18,6 @@ $(document).ready(function() {
 
     function listSpaces() {
       $.get(server + '/spaces', function (data){
-        // dataType: 'String';
         var spaces = JSON.parse(data);
         for (i = 0; i < spaces.length; i++) {
           $('ul').append('<li>'+ "NAME: " + spaces[i].name + ": " + "SPACE: " + spaces[i].description + '</li>');

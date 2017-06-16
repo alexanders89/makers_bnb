@@ -8,8 +8,7 @@ var spacesListTest = function() {
   var button = $('#space-add');
   button.click();
   window.open('spaceList.html');
-  console.log($(document).text());
-  return $(document).text().includes('Donald'); 
+  return $(document).text().includes('Donald');
 }
 
   function runTest() {
